@@ -92,17 +92,17 @@
     <repositories>
         <repository>
             <id>myMavenRepo</id>
-            <url>${myMavenRepoReadUrl}</url>
+            <url>https://mymavenrepo.com/repo/2tNmmGZRzwVU3KuKtDqb/</url>
         </repository>
     </repositories>
     <distributionManagement>
         <repository>
             <id>myMavenRepo</id>
-            <url>${myMavenRepoWriteUrl}</url>
+            <url>https://mymavenrepo.com/repo/JYE7jy96Vrt7QpQ3axZZ/</url>
         </repository>
         <snapshotRepository>
             <id>myMavenRepo</id>
-            <url>${myMavenRepoWriteUrl}</url>
+            <url>https://mymavenrepo.com/repo/JYE7jy96Vrt7QpQ3axZZ/</url>
         </snapshotRepository>
     </distributionManagement>
 </project>
