@@ -13,7 +13,6 @@ steps
 withMaven(maven : 'maven 3.8.5'){
 sh 'mvn test'
 }
-
 }
 stage('Deployment Stage'){
 steps
@@ -22,9 +21,6 @@ sh 'mvn deploy'
 }
 
 }
-
-
-
 
 }
 
