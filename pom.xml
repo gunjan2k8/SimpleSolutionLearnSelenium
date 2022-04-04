@@ -87,22 +87,20 @@
             </plugin>
   </plugins>
     </build>
-
-
-    <repositories>
+<repositories>
         <repository>
-            <id>myMavenRepo</id>
-            <url>https://mymavenrepo.com/repo/2tNmmGZRzwVU3KuKtDqb/</url>
+            <id>myMavenRepo.read</id>
+            <url>${myMavenRepo.read.url}</url>
         </repository>
     </repositories>
-    <distributionManagement>
+   <distributionManagement>
         <repository>
-            <id>myMavenRepo</id>
-            <url>https://mymavenrepo.com/repo/JYE7jy96Vrt7QpQ3axZZ/</url>
+            <id>myMavenRepo.write</id>
+            <url>${myMavenRepo.write.url}</url>
         </repository>
         <snapshotRepository>
-            <id>myMavenRepo</id>
-            <url>https://mymavenrepo.com/repo/JYE7jy96Vrt7QpQ3axZZ/</url>
+            <id>myMavenRepo.write</id>
+            <url>${myMavenRepo.write.url}</url>
         </snapshotRepository>
     </distributionManagement>
 </project>
