@@ -2,24 +2,26 @@ pipeline{
 agent any
 stages{
 stage('Compile Stage'){
-steps
+steps{
 withMaven(maven : 'maven 3.8.5'){
 sh 'mvn clean compile'
 }
 }
+}
 
 stage('Testing Stage'){
-steps
+steps{
 withMaven(maven : 'maven 3.8.5'){
 sh 'mvn test'
 }
 }
+}
 stage('Deployment Stage'){
-steps
+steps{
 withMaven(maven : 'maven 3.8.5'){
 sh 'mvn deploy'
 }
-
+}
 }
 
 }
