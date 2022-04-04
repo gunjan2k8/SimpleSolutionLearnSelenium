@@ -1,0 +1,2 @@
+2022-02-24 20:34:11 ERROR TestLoggerFileAppender:38 - Sample error message
+2022-02-24 20:34:11 FATAL TestLoggerFileAppender:39 - Sample fatal message
