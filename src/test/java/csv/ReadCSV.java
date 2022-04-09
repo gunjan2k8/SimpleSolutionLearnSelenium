@@ -31,11 +31,11 @@ public static void readCSV(String filePath) throws CsvValidationException, IOExc
 
     //Main function is calling readExcel function to read data from csv file
 
-    public static void main(String...strings) throws IOException, CsvValidationException{
+    public static void main(String args[]) throws IOException, CsvValidationException{
 
         String filePath = System.getProperty("user.dir");
         System.out.println(filePath);
-        String CSV_PATH =filePath+"/TestData.csv";
+        String CSV_PATH =filePath+"/Book1.csv";
         //Call read file method of the class to read data
         readCSV(CSV_PATH);
 

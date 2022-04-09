@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="listeners.ListenersTestWithExtentReport">
+      <class name="testsuite.TestClass2">
         <methods>
-          <include name="setup"/>
-          <include name="TestCaseSkip"/>
-          <include name="teardown"/>
-          <include name="TestCaseFail"/>
+          <include name="addtocart"/>
+          <include name="checkout"/>
+          <include name="payment"/>
         </methods>
-      </class> <!-- listeners.ListenersTestWithExtentReport -->
+      </class> <!-- testsuite.TestClass2 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
