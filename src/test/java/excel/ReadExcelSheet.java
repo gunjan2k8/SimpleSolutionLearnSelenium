@@ -84,8 +84,6 @@ public static void readExcel(String filePath,String fileName,String sheetName) t
 
     public static void main(String...strings) throws IOException{
 
-      
-
         //Prepare the path of excel file
 
         String filePath = System.getProperty("user.dir");

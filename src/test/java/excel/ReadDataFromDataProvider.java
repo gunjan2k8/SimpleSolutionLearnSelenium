@@ -47,7 +47,7 @@ public class ReadDataFromDataProvider {
 
 
     @Test(dataProvider="testdata")
-    public void readData(String firstName1,String lastName1,String email1, String mobile1, String address1) throws IOException {
+    public void readData(String firstName1,String lastName1,String email1, String mobile1, String address1 ) throws IOException {
     	
     	int i=1;
     	

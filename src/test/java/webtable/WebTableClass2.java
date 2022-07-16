@@ -7,13 +7,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class WebTableClass2 {
 
 	
 	
 	public static void main(String[] args) {
-		String path = System.getProperty("user.dir");
-		System.setProperty("webdriver.chrome.driver", path + "//drivers//chromedriver.exe");
+//		String path = System.getProperty("user.dir");
+//		System.setProperty("webdriver.chrome.driver", path + "//drivers//chromedriver.exe");
+		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver(); 
 		driver.get("https://money.rediff.com/gainers/bsc/daily/groupap");
 
@@ -56,7 +59,7 @@ public class WebTableClass2 {
         	String companyname = driver.findElement(By.xpath(before_xpath + i + after_xpath)).getText();
         	System.out.println(companyname);
         	// Now click the company name
-        	if (companyname.contains("Balaji")) {
+        	if (companyname.contains("Nitin")) {
         	// click the link
         	driver.findElement(By.xpath("//tbody/tr[" + i + "]/td[1]/a")).click(); 
         	break;

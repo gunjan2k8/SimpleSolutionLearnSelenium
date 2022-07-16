@@ -11,33 +11,51 @@ public class TestClass {
 	WebDriver driver;
 	
 	@BeforeMethod
-	public void test3(){
+	public void test4(){
 		
 		String path = System.getProperty("user.dir");
+		System.out.println("print path"+path);
+		
 		System.setProperty("webdriver.chrome.driver", path + "//drivers//chromedriver.exe");
 		driver = new ChromeDriver(); 
 		
 	}
 	
-		@Test
+		@Test(groups= {"SmokeTest"})  
 		public void test1() {
-		
+			String path = System.getProperty("user.dir");
+			System.out.println("print path"+path);
+			
+			System.setProperty("webdriver.chrome.driver", path + "//drivers//chromedriver.exe");
+			driver = new ChromeDriver(); 
 		driver.get("https://demoqa.com/automation-practice-form");
+		System.out.println("inside test1");
 		driver.close();
 		//driver.quit();
 		
 		}
 		
 		
-		@Test
+		@Test(groups= {"SanityTest","regression","payments"}) 
 		public void test2() {
 		
 			driver.get("https://www.google.com");
+			System.out.println("inside test2");
 			driver.close();
-			
-			
 		}
 	
+		@Test(groups= {"SanityTest","SmokeTest"}) 
+		public void test3() {
+			String path = System.getProperty("user.dir");
+			System.out.println("print path"+path);
+			
+			System.setProperty("webdriver.chrome.driver", path + "//drivers//chromedriver.exe");
+			driver = new ChromeDriver(); 
+			driver.get("https://www.google.com");
+			System.out.println("inside test2");
+			driver.close();
+					
+		}
 	
 	
 

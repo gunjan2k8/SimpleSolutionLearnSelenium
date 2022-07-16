@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
+import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -21,8 +22,8 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 public class ListenerwithExtentreport implements  ITestListener{
 	
-	 public ExtentReports extentReports;
-	 public ExtentTest logger;
+	 public static ExtentReports extentReports;
+	 public static ExtentTest logger;
 	 WebDriver driver = null;
 	 private static Logger log = Logger.getLogger(ListenerwithExtentreport.class.getName());
 	 
@@ -33,6 +34,7 @@ public class ListenerwithExtentreport implements  ITestListener{
     }		
 
     public void onStart(ITestContext context) {	
+    	DOMConfigurator.configure("log4j.xml");
     	 extentReports = new ExtentReports();
         ExtentSparkReporter reporter = new ExtentSparkReporter("./extent-reports/extent-report.html");
         reporter.config().setReportName(" Extent Report of automationexercise website");
@@ -40,6 +42,8 @@ public class ListenerwithExtentreport implements  ITestListener{
         extentReports.setSystemInfo("browser", "chrome");
         extentReports.setSystemInfo("system", "windows");
         extentReports.setSystemInfo("Author", "Gunjan");
+        extentReports.setSystemInfo("Version", "1.1");
+        System.out.println("i  am on start method");
         log.info("I am in onStart method " + context.getName());
         
         		
@@ -49,7 +53,6 @@ public class ListenerwithExtentreport implements  ITestListener{
     public void onTestFailure(ITestResult result) {					
         log.info("I am in onTestFailure method " + result.getName());
         log.info("The name of the testcase failed is :" + result.getName());
-        logger=extentReports.createTest(result.getName()); 
         logger.log(Status.FAIL,MarkupHelper.createLabel(result.getName(),ExtentColor.RED));
         
         ITestContext context = result.getTestContext();
@@ -70,27 +73,28 @@ public class ListenerwithExtentreport implements  ITestListener{
         }
         
         String screenshotPath=System.getProperty("user.dir")+"/Screenshots/"+result.getName()+".png";
-        logger.fail("Screenshot is below:" + logger.addScreenCaptureFromPath(screenshotPath)); 
+        logger.addScreenCaptureFromPath(screenshotPath);
+        logger.fail("Screenshot is attached"); 
         		
     }		
 
     public void onTestSkipped(ITestResult result) {					
     	 log.info("I am in onTestSkipped method " + result.getName());
          log.info("The name of the testcase skipped is :" + result.getName());   
-         logger=extentReports.createTest(result.getName()); 
          logger.log(Status.SKIP,MarkupHelper.createLabel(result.getName(),ExtentColor.ORANGE));
     }		
 
     public void onTestStart(ITestResult result) {					
     	  log.info("I am in onTestStart method " + result.getName());
-          log.info("The name of the testcase start is :" + result.getName());        		
+          log.info("The name of the testcase start is :" + result.getName());
+          logger=extentReports.createTest(result.getName()); 
     }		
 
     public void onTestSuccess(ITestResult result) {					
     	  log.info("I am in onTestSuccess method " + result.getName());
           log.info("The name of the testcase success is :" + result.getName());
         
-          logger=extentReports.createTest(result.getName()); 
+          
           logger.log(Status.PASS,MarkupHelper.createLabel(result.getName(),ExtentColor.GREEN));
     }		
     

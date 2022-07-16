@@ -12,6 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import utils.ExcelUtils;
 
 public class ReadExcelCreateUser {
@@ -30,10 +31,12 @@ public class ReadExcelCreateUser {
 
     public static  void main(String args[]) throws IOException, InterruptedException {
         //set the Chrome Driver path        
-        System.setProperty("webdriver.chrome.driver", filePath + "//drivers//chromedriver.exe");
-        
+      //  System.setProperty("webdriver.chrome.driver", filePath + "//drivers//chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
+
         //Creating an object of ChromeDriver
         WebDriver driver = new ChromeDriver();
+        
         
         //launching the specified URL
         driver.get("https://demoqa.com/automation-practice-form");
@@ -46,7 +49,7 @@ public class ReadExcelCreateUser {
         driver.manage().window().maximize();
 
         //iterate over all the row to print the data present in each cell.
-        for(int i=1;i<excelUtils.getRowCount()+1;i++)
+        for(int i=1;i<excelUtils.getRowCount()+1;i++) 
         {   
         	driver.navigate().refresh();
         	

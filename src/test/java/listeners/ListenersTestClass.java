@@ -34,8 +34,6 @@ public class ListenersTestClass {
 	driver.findElement(By.xpath("//input[@data-qa='signup-email']")).sendKeys("gunjan2k8@gmail.com");
 	log.info("enter email");
 	driver.findElement(By.xpath("//button[@data-qa='signup-button']")).click();
-
-       
 	driver.close();
 	}
 	

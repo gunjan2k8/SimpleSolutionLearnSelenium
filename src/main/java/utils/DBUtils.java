@@ -19,7 +19,7 @@ public class DBUtils {
 			
 	 	    //Load mysql jdbc driver		
 		   	  //  Class.forName("com.mysql.jdbc.Driver");	use it in old dependency	
-		   	    Class.forName("com.mysql.cj.jdbc.Driver");			
+		   	 //   Class.forName("com.mysql.cj.jdbc.Driver");			
 		  
 		    	Connection con= null;
         try {

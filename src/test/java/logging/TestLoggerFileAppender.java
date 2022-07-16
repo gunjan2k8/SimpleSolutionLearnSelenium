@@ -21,6 +21,7 @@ public class TestLoggerFileAppender {
 	System.setProperty("webdriver.chrome.driver", path + "//drivers//chromedriver.exe");
 	WebDriver driver = new ChromeDriver(); 
 	driver.get("https://www.automationexercise.com/");
+	
 	log.info("Open automation exercise website");
 	driver.manage().window().maximize();
 	log.info("Maximize window size");

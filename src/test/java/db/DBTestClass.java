@@ -37,5 +37,31 @@ public class DBTestClass {
         // closing DB Connection		
 		con.close();	
     }
+	
+	@Test
+    public void getEmployeesFromDataBase1() throws ClassNotFoundException, SQLException {
+		Connection con=db.dbConn();
+        try {
+    		String query = "UPDATE mydatabase.table1 SET salary=200 WHERE name='new3';";	
+    		
+      		//Create Statement Object		
+    		   Statement stmt = con.createStatement();		
+    		   stmt.executeUpdate(query);
+
+//    		// Execute the SQL Query. Store results in ResultSet		
+//    	 	ResultSet rs= stmt.executeQuery(query);	
+//    	 		
+//    		// While Loop to iterate through all data and print results		
+//    		while (rs.next()){
+//    	        		String name = rs.getString(1);								        
+//                        					                               
+//                        System. out.println(name);		
+//                }	
+        } catch (SQLException ex) {
+           ex.printStackTrace();
+        }
+        // closing DB Connection		
+		con.close();	
+    }
 
 }

@@ -8,10 +8,10 @@ public class PropertyTestClass {
 
  String projectdir=System.getProperty("user.dir");
 
- File fs = new File(projectdir+"/propfile.properties");
+// File fs = new File(projectdir+"/propfile.properties");
  PropertyUtils pu = new PropertyUtils();
 
- @Test
+@Test
  public void test() throws Exception {
 
  pu.setPropertyFile(projectdir+"/propfile.properties");
